@@ -21,7 +21,7 @@ public class Guess {
   private int nearMatches;
 
   @Expose
-  private boolean solved;
+  private boolean solution;
 
   public String getId() {
     return id;
@@ -63,12 +63,12 @@ public class Guess {
     this.nearMatches = nearMatches;
   }
 
-  public boolean isSolved() {
-    return solved;
+  public boolean isSolution() {
+    return solution;
   }
 
-  public void setSolved(boolean solved) {
-    this.solved = solved;
+  public void setSolution(boolean solution) {
+    this.solution = solution;
   }
 }
 
