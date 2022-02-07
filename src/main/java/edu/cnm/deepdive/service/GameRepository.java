@@ -14,7 +14,7 @@ public class GameRepository {
     proxy = CodebreakerServiceProxy.getInstance();
   }
 
-  public Game startGame(String pool, int length) throws IOException {
+  public Game startGame(String pool, int length) throws IOException, BadGameException {
     Game game = new Game();
     game.setPool(pool);
     game.setLength(length);
@@ -38,6 +38,7 @@ public class GameRepository {
     game
         .getGuesses()
         .add(evaluatedGuess);
+    //noinspection ConstantConditions
     if (evaluatedGuess.isSolution()) {
       game.setSolved(true);
       game.setText(guess.getText());
